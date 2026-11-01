@@ -1,0 +1,19 @@
+{
+  "id": "neobase.bestiaire",
+  "name": "Bestiaire",
+  "version": "1.0.0",
+  "author": "NDesumeur",
+  "description": "L'encyclopédie pixel des 523 créatures de NeoBase : recherche, filtres par type et rareté, fiches détaillées, statistiques, capacités, comparateur et habitats.",
+  "icon": "icon.png",
+  "entry": "index.js",
+  "view": "bestiaire",
+  "neobase": ">=4.1.0",
+  "type": "app",
+  "category": "Jeux",
+  "mobile": false,
+  "system": false,
+  "dependencies": {},
+  "permissions": [
+    "full"
+  ]
+}
