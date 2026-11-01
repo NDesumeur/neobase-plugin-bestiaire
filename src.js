@@ -17,13 +17,13 @@ const CSS = `
 .bs-cell{position:relative;border:0;background:var(--cb-card);padding:6px 4px 8px;display:flex;flex-direction:column;align-items:center;gap:3px;box-shadow:0 0 0 2px var(--cb-line),0 3px 0 2px #05010b;text-align:center;min-height:152px}
 .bs-cell:hover{box-shadow:0 0 0 2px var(--cb-hi),0 3px 0 2px #05010b;transform:translateY(-2px)}
 .bs-cell.sel{box-shadow:0 0 0 3px #fff,0 3px 0 3px #05010b;background:var(--cb-card2)}
-.bs-cell .no{font-size:10px;color:var(--cb-sub);align-self:flex-start;margin-left:4px;letter-spacing:1px}
+.bs-cell .no{font-size:9px;color:var(--cb-sub);align-self:flex-start;margin-left:4px;letter-spacing:1px}
 .bs-cell .ph{width:96px;height:96px;background:radial-gradient(circle at 50% 70%,color-mix(in srgb,var(--c) 35%,transparent),transparent 70%)}
 .bs-cell .nm{font-size:12px;font-weight:700;line-height:1.15;word-break:break-word}
 .bs-cell .rs{position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--rc)}
 .bs-cell .fv{position:absolute;right:4px;top:3px;font-size:13px;color:#ffd07a}
 .bs-cell .ty{display:flex;gap:3px}.bs-cell .ty i{width:10px;height:10px;box-shadow:inset 0 -2px 0 rgba(0,0,0,.3)}
-.bs-det{position:sticky;top:0;max-height:calc(100vh - 150px);overflow:auto;display:flex;flex-direction:column;gap:10px}
+.bs-det{overflow-x:hidden;overflow-wrap:anywhere;min-width:0;position:sticky;top:0;max-height:calc(100vh - 150px);overflow:auto;display:flex;flex-direction:column;gap:10px}
 .bs-stage{position:relative;display:grid;place-items:center;height:238px;background:radial-gradient(ellipse at 50% 85%,color-mix(in srgb,var(--c) 45%,transparent),transparent 62%),repeating-linear-gradient(0deg,#120a2c 0 4px,#15103a 4px 8px);box-shadow:inset 0 0 0 2px var(--cb-line)}
 .bs-stage::after{content:"";position:absolute;left:25%;right:25%;bottom:22px;height:14px;background:radial-gradient(ellipse,rgba(0,0,0,.55),transparent 70%)}
 .bs-stage canvas{position:relative;z-index:1;margin-bottom:6px}
@@ -46,7 +46,7 @@ const CSS = `
 @media (max-width:1180px){.bs-body{grid-template-columns:200px minmax(0,1fr)}.bs-det{position:fixed;right:10px;top:70px;bottom:10px;width:min(400px,92vw);z-index:200;max-height:none;background:var(--cb-bg);box-shadow:0 0 0 3px var(--cb-hi),0 10px 30px #000}}
 `;
 const SORTS = {
-  num: ['N° dans le bestiaire', (a, b) => a.id.localeCompare(b.id)],
+  num: ['N° dans le bestiaire', (a, b) => (a.id.slice(3) - b.id.slice(3))],
   nom: ['Nom (A → Z)', (a, b) => a.n.localeCompare(b.n, 'fr')],
   rar: ['Rareté (plus rare d\'abord)', (a, b) => CR.RK[b.r] - CR.RK[a.r] || CR.total(b) - CR.total(a)],
   pui: ['Puissance totale', (a, b) => CR.total(b) - CR.total(a)],
