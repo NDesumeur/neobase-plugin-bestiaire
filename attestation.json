@@ -1,0 +1,9 @@
+{
+  "pluginId": "neobase.bestiaire",
+  "repo": "NDesumeur/neobase-plugin-bestiaire",
+  "version": "1.4.0",
+  "sha256": "41906e2b39451d3796518c96ada481fa84ae52ec2d372eeebc6fd309824510ef",
+  "approvedAt": "2026-11-01T22:36:52.683Z",
+  "neobase": ">=4.1.0",
+  "signature": "fJGu9QelZzJU8WnrwTjkd76RiFOrtaPLiLvLb/aFaPeP5ubYuIg31ivQ+nq/V7Bl5fY6MFE2GDSCxQpmUiMjBw=="
+}
