@@ -1,4 +1,4 @@
-// Bestiaire : l'encyclopédie pixel art des créatures de NeoBase (523 fiches : noms uniques, raretés, statistiques, types, capacités, illustrations).
+// Bestiaire : l'encyclopédie pixel art des créatures de NeoBase (1050 fiches : noms uniques, raretés, statistiques, types, capacités, illustrations).
 // La base de créatures est la même que celle du jeu de cartes et du jeu d'exploration : un identifiant par créature, jamais réutilisé.
 // Les favoris et ton dernier réglage sont dans le dossier du plugin, que NeoBase sauvegarde (synchro cloud comprise).
 /*@CREATURES@*/
@@ -128,7 +128,7 @@ export default async function (ctx) {
     mkb('◀', () => step(-1)); mkb('▶', () => step(1)); mkb(isFav ? '★ Favori' : '☆ Favori', () => { isFav ? S.fav.delete(c.id) : S.fav.add(c.id); persist(); renderDetail(); const b = cache.get(c.id); b && cell(c); count.textContent = count.textContent; }, isFav ? 'on' : '');
     mkb('Comparer', () => compare(c)); const sp = CRUI.el('span'); sp.style.flex = '1'; nav.append(sp); mkb('✕', () => { root.classList.add('noDet'); S.sel = null; renderGrid(); }, 'x');
     const stage = CRUI.el('div', 'bs-stage'); stage.style.setProperty('--c', CRUI.typeCol(c.t));
-    stage.append(CRUI.el('span', 'bs-no', 'N° ' + c.id.slice(3)), CRUI.el('span', 'bs-pw', 'PUISS. ' + CR.power(c)), CRUI.anim(c, 6));
+    stage.append(CRUI.el('span', 'bs-no', 'N° ' + c.id.slice(3)), CRUI.el('span', 'bs-pw', 'PUISS. ' + CR.power(c)), CRUI.anim(c, 8));
     const info = CRUI.el('div'); info.innerHTML = `<div class="bs-name">${CRUI.esc(c.n)}</div><div style="margin:6px 0 10px">${CRUI.typeChips(c)} ${CRUI.rarBadge(c.r)} <span class="cb-badge" style="background:#3a2a6e;color:#d9cdf6">${PLAN_NAMES[c.plan]}</span></div>
       <div class="bs-desc">${CRUI.esc(c.d)}</div>`;
     const stats = CRUI.el('div'); stats.innerHTML = `<div class="cb-h" style="margin:10px 0 4px;font-size:9px">Statistiques · total ${CR.total(c)}</div>` + CRUI.bars(c);

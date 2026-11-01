@@ -1,7 +1,7 @@
 {
   "id": "neobase.bestiaire",
   "name": "Bestiaire",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "author": "NDesumeur",
   "description": "L'encyclopédie pixel des 1050 créatures de NeoBase (folklore japonais, mythes du monde, livres) : recherche, filtres par type et rareté, fiches détaillées, statistiques, capacités, comparateur et habitats.",
   "icon": "icon.png",
