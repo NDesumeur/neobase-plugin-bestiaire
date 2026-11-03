@@ -72,7 +72,7 @@ export default async function (ctx) {
   const title = CRUI.el('div', 'cb-h', 'Bestiaire'), count = CRUI.el('span', 'cb-sub');
   const tabs = CRUI.el('div', 'cb-tabs');
   const tabBtn = (k, n) => { const b = CRUI.el('button', 'cb-btn' + (S.tab === k ? ' on' : ''), n); b.onclick = () => { S.tab = k; renderAll(); }; return b; };
-  const rnd = CRUI.el('button', 'cb-btn', 'Au hasard'); rnd.onclick = () => { const l = filtered(); const c = l[Math.floor(Math.random() * l.length)] || CREATURES[0]; select(c.id, true); };
+  const rnd = CRUI.el('button', 'cb-btn', 'Au hasard'); rnd.onclick = () => { const l = filtered(); const c = l[Math.floor(Math.random() * l.length)] || CREATURES[0]; if (c) select(c.id, true); };
   const spc = CRUI.el('span'); spc.style.flex = '1'; top.append(title, tabs, count, spc, rnd);
   /* ---------- filters ---------- */
   const q = CRUI.el('input', 'cb-in'); q.placeholder = 'Chercher un nom, une capacité…'; q.style.width = '100%';
@@ -111,7 +111,7 @@ export default async function (ctx) {
   };
   const renderGrid = () => {
     const l = filtered(); grid.innerHTML = '';
-    if (!l.length) grid.append(CRUI.el('div', 'bs-empty', 'Aucune créature ne correspond.<br>Essaie d\'effacer un filtre.'));
+    if (!l.length) grid.append(CRUI.el('div', 'bs-empty', CREATURES.length ? 'Aucune créature ne correspond.<br>Essaie d\'effacer un filtre.' : 'Le bestiaire est vide pour l\'instant.<br>Les nouvelles créatures arrivent bientôt.'));
     const fr = document.createDocumentFragment(); l.forEach(c => { const b = cell(c), ph = b.querySelector('.ph'); fr.append(b); if (!ph.firstChild) io.observe(ph); ph.dataset.id = c.id; }); grid.append(fr);
     count.textContent = l.length === CREATURES.length ? CREATURES.length + ' créatures' : l.length + ' / ' + CREATURES.length + ' créatures · ' + S.fav.size + ' favori' + (S.fav.size > 1 ? 's' : '');
     mid.contains(grid) || mid.append(grid);
