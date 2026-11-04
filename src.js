@@ -1,6 +1,6 @@
-// Bestiaire : l'encyclopédie pixel art des créatures de NeoBase (1050 fiches : noms uniques, raretés, statistiques, types, capacités, illustrations).
+// Bestiaire : l'encyclopédie pixel art des créatures de NeoDex (1050 fiches : noms uniques, raretés, statistiques, types, capacités, illustrations).
 // La base de créatures est la même que celle du jeu de cartes et du jeu d'exploration : un identifiant par créature, jamais réutilisé.
-// Les favoris et ton dernier réglage sont dans le dossier du plugin, que NeoBase sauvegarde (synchro cloud comprise).
+// Les favoris et ton dernier réglage sont dans le dossier du plugin, que NeoDex sauvegarde (synchro cloud comprise).
 /*@CREATURES@*/
 const CSS = `
 .bs{display:flex;flex-direction:column;gap:12px;min-height:78vh}

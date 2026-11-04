@@ -1,8 +1,8 @@
-// Bestiaire : l'encyclopédie pixel art des créatures de NeoBase (1050 fiches : noms uniques, raretés, statistiques, types, capacités, illustrations).
+// Bestiaire : l'encyclopédie pixel art des créatures de NeoDex (1050 fiches : noms uniques, raretés, statistiques, types, capacités, illustrations).
 // La base de créatures est la même que celle du jeu de cartes et du jeu d'exploration : un identifiant par créature, jamais réutilisé.
-// Les favoris et ton dernier réglage sont dans le dossier du plugin, que NeoBase sauvegarde (synchro cloud comprise).
-/* ===== Base de créatures NeoBase (neobase-creatures) : noyau, données, interface ===== */
-// Noyau commun des créatures NeoBase : types, raretés, calcul des statistiques et dessin pixel art (32 x 32).
+// Les favoris et ton dernier réglage sont dans le dossier du plugin, que NeoDex sauvegarde (synchro cloud comprise).
+/* ===== Base de créatures NeoDex (neobase-creatures) : noyau, données, interface ===== */
+// Noyau commun des créatures NeoDex : types, raretés, calcul des statistiques et dessin pixel art (32 x 32).
 // Ce fichier est collé tel quel dans chaque plugin qui utilise la base (bestiaire, cartes, jeu) par build.js.
 // Un sprite est dessiné à partir de l'entrée seule (plan, graine, types, rareté) : même entrée = même créature, partout.
 const CR = (() => {
